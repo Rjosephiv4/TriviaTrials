@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+{% block main %}
+    <div id = "mainWrapper">
+        <div id="classicWrapper">
+            <form method = "post" action = "/">
+                <button id = "classicButton" type = "submit" class = "homeButton btn-grad" name = "classic">
+                    <div class = "gameWrapper">
+                        <div class = "gameTitle">
+                            <div>
+                                <p id = "classicText" class = "homeText rubik-moonrocks-regular">The <br> Classic</p>
+                            </div>
+                        </div>
+                        <div class = "logoForGame gameLogoClassic">
+                            <img src="../../static/logoFor15.png" alt="Logo For The Classic" class = "gameLogo">
+                        </div>
+                        {% if session["user_id"] %}
+                            <div class = "gameText">
+                                <p class = "loginText nunito">
+                                    15 Trivia Questions From Today In History
+                                </p>
+                            </div>
+                        {% else %}
+                            <div class = "gameText">
+                                <p class = "loginText nunito">
+                                    Login/Register <br> to Play the Classic
+                                </p>
+                            </div>
+                        {% endif %}
+                        <div class = "gameDate">
+                            <p class = "dateText bungee-regular">{{today['weekday']}}, {{today['month']}} {{today['day']}}</p>
+                        </div>
+                    </div>
+                </button>
+            </form>
+        </div>
+        <div id="miniWrapper">
+            <form method = "post" action = "/">
+                <button id = "miniButton" class = "homeButton btn-grad" name = "mini">
+                    <div class = gameWrapper>  
+                        <div class = "gameTitle">      
+                            <p id = "miniText" class = "homeText rubik-moonrocks-regular">The <br> Mini</p>
+                        </div>
+                        <div class = "logoForGame">
+                            <img src="../../static/logoFor5.png" alt="Logo For The MINI" class="gameLogo" id = "gameLogo2">
+                        </div>
+                        {% if session["user_id"] %}
+                            <div class = "gameText">
+                                <p class = "loginText nunito">
+                                    5 Trivia Questions From Today In History
+                                </p>
+                            </div>
+                        {% else %}
+                            <div class = "gameText">
+                                <p class = "loginText nunito">
+                                    Login/Register <br> to Play the Mini
+                                </p>
+                            </div>
+                        {% endif %}
+                        <div class = "gameDate">
+                            <p class = "dateText bungee-regular">{{today['weekday']}}, {{today['month']}} {{today['day']}}</p>
+                        </div>
+                    </div>
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

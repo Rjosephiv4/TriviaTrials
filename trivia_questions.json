@@ -1,0 +1,144 @@
+{
+    "questions": [
+        {
+            "question": "Who was the American actor known for his roles in 'The Apartment' and 'Some Like It Hot'?",
+            "correct": "Jack Lemmon",
+            "incorrect1": "Humphrey Bogart",
+            "incorrect2": "Jimmy Stewart",
+            "incorrect3": "Cary Grant"
+        },
+        {
+            "question": "Who became prime minister of the United Kingdom after serving as chancellor of the Exchequer from 1997\u20132007?",
+            "correct": "Gordon Brown",
+            "incorrect1": "Tony Blair",
+            "incorrect2": "David Cameron",
+            "incorrect3": "Theresa May"
+        },
+        {
+            "question": "Which American businessman ran as an independent candidate in the U.S. presidential elections of 1992 and 1996?",
+            "correct": "Ross Perot",
+            "incorrect1": "Steve Forbes",
+            "incorrect2": "John Anderson",
+            "incorrect3": "Ralph Nader"
+        },
+        {
+            "question": "Which Confederate General led the attack during the first Battle of Cold Harbor in the American Civil War?",
+            "correct": "Robert E. Lee",
+            "incorrect1": "Stonewall Jackson",
+            "incorrect2": "James Longstreet",
+            "incorrect3": "J.E.B. Stuart"
+        },
+        {
+            "question": "Who was the Irish nationalist and leader in the struggle for Irish Home Rule, born in County Wicklow?",
+            "correct": "Charles Stewart Parnell",
+            "incorrect1": "Michael Collins",
+            "incorrect2": "Eamon de Valera",
+            "incorrect3": "Daniel O'Connell"
+        },
+        {
+            "question": "Whose work, 'The History of the Decline and Fall of the Roman Empire', is considered a masterpiece of historical literature?",
+            "correct": "Edward Gibbon",
+            "incorrect1": "Tacitus",
+            "incorrect2": "Livy",
+            "incorrect3": "Suetonius"
+        },
+        {
+            "question": "What is the official monetary unit of Japan?",
+            "correct": "Yen",
+            "incorrect1": "Won",
+            "incorrect2": "Rupee",
+            "incorrect3": "Peso"
+        },
+        {
+            "question": "The Declaration of Independence was primarily written by which founding father?",
+            "correct": "Thomas Jefferson",
+            "incorrect1": "John Adams",
+            "incorrect2": "Alexander Hamilton",
+            "incorrect3": "Benjamin Franklin"
+        },
+        {
+            "question": "Which country gained its independence from France on June 27, 1977?",
+            "correct": "Djibouti",
+            "incorrect1": "Cameroon",
+            "incorrect2": "Senegal",
+            "incorrect3": "Madagascar"
+        },
+        {
+            "question": "Which Roman Emperor famously fiddled while Rome burned?",
+            "correct": "Nero",
+            "incorrect1": "Caligula",
+            "incorrect2": "Augustus",
+            "incorrect3": "Tiberius"
+        },
+        {
+            "question": "Who was the leader of the Allied forces in Europe during World War II?",
+            "correct": "Dwight D. Eisenhower",
+            "incorrect1": "George S. Patton",
+            "incorrect2": "Bernard Montgomery",
+            "incorrect3": "Douglas MacArthur"
+        },
+        {
+            "question": "What was the pen name of the American writer Samuel Langhorne Clemens?",
+            "correct": "Mark Twain",
+            "incorrect1": "O. Henry",
+            "incorrect2": "F. Scott Fitzgerald",
+            "incorrect3": "Jack London"
+        },
+        {
+            "question": "Who painted the Mona Lisa?",
+            "correct": "Leonardo da Vinci",
+            "incorrect1": "Vincent van Gogh",
+            "incorrect2": "Michelangelo",
+            "incorrect3": "Raphael"
+        },
+        {
+            "question": "Which scientist developed the theory of general relativity?",
+            "correct": "Albert Einstein",
+            "incorrect1": "Isaac Newton",
+            "incorrect2": "Niels Bohr",
+            "incorrect3": "Galileo Galilei"
+        },
+        {
+            "question": "Who was the British Prime Minister during most of World War II?",
+            "correct": "Winston Churchill",
+            "incorrect1": "Neville Chamberlain",
+            "incorrect2": "Clement Attlee",
+            "incorrect3": "Anthony Eden"
+        },
+        {
+            "question": "Who was known as the 'Iron Lady' during her time as Britain's Prime Minister?",
+            "correct": "Margaret Thatcher",
+            "incorrect1": "Teresa May",
+            "incorrect2": "Elizabeth II",
+            "incorrect3": "Angela Merkel"
+        },
+        {
+            "question": "Which Italian explorer is credited with discovering the New World in 1492?",
+            "correct": "Christopher Columbus",
+            "incorrect1": "Marco Polo",
+            "incorrect2": "Amerigo Vespucci",
+            "incorrect3": "John Cabot"
+        },
+        {
+            "question": "Who wrote the tragedy play 'Hamlet'?",
+            "correct": "William Shakespeare",
+            "incorrect1": "Christopher Marlowe",
+            "incorrect2": "Ben Jonson",
+            "incorrect3": "Thomas Kyd"
+        },
+        {
+            "question": "Who was the first President of the United States?",
+            "correct": "George Washington",
+            "incorrect1": "John Adams",
+            "incorrect2": "Thomas Jefferson",
+            "incorrect3": "James Madison"
+        },
+        {
+            "question": "What famous Greek philosopher taught Alexander the Great?",
+            "correct": "Aristotle",
+            "incorrect1": "Socrates",
+            "incorrect2": "Plato",
+            "incorrect3": "Epicurus"
+        }
+    ]
+}

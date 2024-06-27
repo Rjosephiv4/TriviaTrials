@@ -1,0 +1,49 @@
+{% extends "classic.html" %}
+
+{% block scoreBoard %}
+    <img src="../../static/TriviaTrials.png" alt="Trivia Trials Logo" id = "logo">
+    <div id = "timer">
+        Q #{{ leaderBoardStats["classicQuestionsToday"] + 1}}
+    </div>
+    <div id="scoreContainer">
+        <ul class="navbar-nav me-auto mt-2">
+            <li class="nav-item"> <span>SCORE</span> <br> <span id = "correctQuestions">{{ leaderBoardStats["classicScoreToday"] }}</span>/<span id = "questionsAnswered">{{ leaderBoardStats["classicQuestionsToday"] }}</span></li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div class = "questionWrapper">
+        <div class = "questionDiv">
+            <h1 class = "gameQuestion">
+                {{ questions["questions"][leaderBoardStats["classicQuestionsToday"]]["question"] }}
+            </h1>
+        </div>
+        <form class = "questionAnswersForm">
+            <div class = "answersWrapper">
+                <div class = "answerWrapper button-64" id = "answer1Container">
+                    <input type = "radio" class = "answer1 answers" name = "question1" value = "CORRECT">
+                    <label for = "answer1" class = "answerLabel"> {{ questions["questions"][leaderBoardStats["classicQuestionsToday"]]["correct"] }} </label>
+                </div>
+                <div class = "answerWrapper button-64" id = "answer2Container">
+                    <input type = "radio" class = "answer2 answers" name = "question1" value = "INCORRECT">
+                    <label for = "answer2" class = "answerLabel">{{ questions["questions"][leaderBoardStats["classicQuestionsToday"]]["incorrect1"] }}</label>
+                </div>
+                <div class = "answerWrapper button-64" id = "answer3Container">
+                    <input type = "radio" class = "answer3 answers" name = "question1" value = "INCORRECT">
+                    <label for = "answer3" class = "answerLabel">{{ questions["questions"][leaderBoardStats["classicQuestionsToday"]]["incorrect2"] }}</label>
+                </div>
+                <div class = "answerWrapper button-64" id = "answer4Container">
+                    <input type = "radio" class = "answer4 answers" name = "question1" value = "INCORRECT">
+                    <label for = "answer4" class = "answerLabel">{{ questions["questions"][leaderBoardStats["classicQuestionsToday"]]["incorrect3"] }}</label>
+                </div>
+                <div id = "questionSubmitContainer">
+                    <button type = "submit" id = "questionSubmit" class = "button-64">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="../../static/timerQuestion1Classic.js" defer></script>
+{% endblock %}

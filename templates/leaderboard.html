@@ -1,0 +1,170 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Leaderboard
+{% endblock %}
+{% block main %}
+
+<div class="headerLeaderBoard">
+  <p id="statsHeader">
+    Stats
+  </p>
+</div>
+
+<div id="containerOfLeaderBoard" class="button-64PostSubmission">
+  <div id="classicTextContainer">
+    <p id="classicTextSummary" class="summaryText">The Classic</p>
+  </div>
+
+  <div id="classicTodayContainer">
+    <div class="todaysClassicContainer">
+      <div class="gameDateContainer">
+        <p class="dateText">{{today['weekday']}}, {{today['month']}} {{today['day']}}</p>
+      </div>
+      <div class="pieChartContainer">
+        <svg class="pie-chart">
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div id="classicAllTimeContainer">
+    <div class="allTimeClassicContainer">
+      <div class="gameDateContainer">
+        <p class="dateText">All Time</p>
+      </div>
+      <div class="pieChartContainer">
+        <svg class="pie-chart3">
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div id="miniTextContainer">
+    <p id="miniTextSummary" class="summaryText">The Mini</p>
+  </div>
+
+  <div id="miniTodayContainer">
+    <div class="todaysMiniContainer">
+      <div class="gameDateContainer">
+        <p class="dateText">{{today['weekday']}}, {{today['month']}} {{today['day']}}</p>
+      </div>
+      <div class="pieChartContainer">
+        <svg class="pie-chart2">
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div id="miniAllTimeContainer">
+    <div class="allTimeMiniContainer">
+      <div class="gameDateContainer">
+        <p class="dateText">All Time</p>
+      </div>
+      <div class="pieChartContainer">
+        <svg class="pie-chart4">
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="headerLeaderBoard">
+  <p id="statsHeader">
+    Leaderboard
+  </p>
+</div>
+
+<div class="leaderboards">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../../static/piechart.js"></script>
+
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th colspan="3" class="text-center">The Classic: Today</th>
+      </tr>
+      <tr>
+        <th class="text-center">Rank</th>
+        <th class="text-center">Player</th>
+        <th class="text-center">Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for player in classicWinnersToday %}
+      <tr>
+        <td class="text-center">#{{ player["rank"] }}</td>
+        <td class="text-center">{{ player["playerName"] }}</td>
+        <td class="text-center">{{ (player["classicPercentToday"] * 100) | int }}%</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <table class="table table-primary">
+    <thead>
+      <tr>
+        <th colspan="3" class="text-center">The Classic: All Time</th>
+      </tr>
+      <tr>
+        <th class="text-center">Rank</th>
+        <th class="text-center">Player</th>
+        <th class="text-center">Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for player in classicWinnersAllTime %}
+      <tr>
+        <td class="text-center">#{{ player["rank"] }}</td>
+        <td class="text-center">{{ player["playerName"] }}</td>
+        <td class="text-center">{{ (player["classicPercentAllTime"] * 100) | int }}%</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th colspan="3" class="text-center">The Mini: Today</th>
+      </tr>
+      <tr>
+        <th class="text-center" colspan="1">Rank</th>
+        <th class="text-center" colspan="1">Player</th>
+        <th class="text-center" colspan="1">Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for player in miniWinnersToday %}
+      <tr>
+        <td class="text-center">#{{ player["rank"] }}</td>
+        <td class="text-center">{{ player["playerName"] }}</td>
+        <td class="text-center">{{ (player["miniPercentToday"] * 100) | int }}%</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <table class="table table-primary">
+    <thead>
+      <tr>
+        <th colspan="3" class="text-center">The Mini: All Time</th>
+      </tr>
+      <tr>
+        <th class="text-center"><span>Rank</span></th>
+        <th class="text-center">Player</th>
+        <th class="text-center">Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for player in miniWinnersAllTime %}
+      <tr>
+        <td class="text-center">#{{ player["rank"] }}</td>
+        <td class="text-center">{{ player["playerName"] }}</td>
+        <td class="text-center">{{ (player["miniPercentAllTime"] * 100) | int }}%</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Classic Summary
+{% endblock %}
+{% block main %}
+
+<div class = "headerLeaderBoard">
+  <p id = "statsHeader">
+    {% if leaderBoardStats["classicScoreToday"] > 7 %}
+      Great Job Today!
+    {% else %}
+      Better Luck Tomorrow!
+    {% endif %}
+  </p>
+</div>
+
+</div>
+<div id = "containerOfSummary" class = "button-64PostSubmission containerOfSummary">
+  <div id = "summaryTextContainer">
+    <p id = "classicTextSummary2" class = "summaryText">The Classic</p>
+  </div>
+
+  <div id = "summaryTodayContainer">
+    <div class = "todaysSummaryContainer">
+      <div class = "gameDateContainer">
+        <p class = "dateText2">{{today['weekday']}}, {{today['month']}} {{today['day']}}</p>
+    </div>
+      <div class = "pieChartContainer2">
+        <svg class = "pie-chart">
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div id = "classicAllTimeContainer">
+    <div class = "allTimeClassicContainer">
+      <div class = "gameDateContainer">
+        <p class = "dateText2">All Time</p>
+    </div>
+      <div class = "pieChartContainer2">
+        <svg class = "pie-chart3">
+        </svg>
+      </div>
+    </div>
+  </div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="../../static/piechart2.js"></script>
+
+
+
+{% endblock %}

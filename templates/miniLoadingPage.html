@@ -1,0 +1,42 @@
+{% extends "mini.html" %}
+
+{% block scoreBoard %}
+    <img src="../../static/TriviaTrials.png" alt="Trivia Trials Logo" id = "logo">
+
+
+{% endblock %}
+
+
+{% block main %}
+
+    <div id = "introWrapper" class = "button-64PostSubmission">
+        <div class = "gameHeaderContainer">
+            <h1 class = "gameLoadingQuestion">
+                The Mini
+            </h1>
+        </div>
+        <div>
+            <img src="../../static/logoFor5.png" alt="Logo For The Mini" class = "gameLogo" id = "logo ">
+        </div>
+
+        <div class = "gameExplainerContainer">
+            <h2 class = "gameExplainer">
+                5 Questions         
+            </h2>
+
+            <h2 class = "gameExplainer">
+                15 Seconds Each     
+            </h2>
+        </div>
+        <div id = "questionSubmitContainer">
+            <button type = "submit" id = "questionSubmit" class = "button-64">Start</button>
+
+        </div>
+    </div>
+
+
+<script src="../../static/modalOperations.js" defer></script>
+<script src="../../static/firstPageMini.js" defer></script>
+
+
+{% endblock %}
