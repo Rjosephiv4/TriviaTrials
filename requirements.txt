@@ -59,7 +59,6 @@ sqlparse==0.5.0
 termcolor==2.4.0
 tqdm==4.66.4
 typing_extensions==4.11.0
-ubuntu-pro-client==8001
 ufw==0.36.1
 unattended-upgrades==0.1
 urllib3==2.2.1
