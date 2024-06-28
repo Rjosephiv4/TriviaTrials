@@ -45,7 +45,6 @@ pyinotify==0.9.6
 PyJWT==2.3.0
 pyOpenSSL==21.0.0
 pyparsing==2.4.7
-python-apt==2.4.0+ubuntu3
 python-dotenv==1.0.1
 pytz==2022.1
 PyYAML==5.4.1
