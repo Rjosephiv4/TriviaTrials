@@ -258,10 +258,6 @@ def leaderboardClassicSummary():
     id = session["user_id"]
     tableName = "table" + str(id)
 
-    db.execute("UPDATE leaderboard SET classicQuestionsToday = 15")
-    classicInCaseRaceConditionUpdate = "UPDATE {} SET classicQuestionsToday = 15".format(tableName)
-    db.execute(classicInCaseRaceConditionUpdate)
-
     leaderBoardStats= {}
 
     classicScoreTodayQuery = "SELECT classicScoreToday FROM {}".format(tableName)
@@ -296,10 +292,6 @@ def leaderboardClassicSummary():
 def leaderboardMiniSummary(): 
     id = session["user_id"]
     tableName = "table" + str(id)
-
-    db.execute("UPDATE leaderboard SET miniQuestionsToday = 5")
-    miniInCaseRaceConditionUpdate = "UPDATE {} SET miniQuestionsToday = 5".format(tableName)
-    db.execute(miniInCaseRaceConditionUpdate)
 
     leaderBoardStats= {}
 
