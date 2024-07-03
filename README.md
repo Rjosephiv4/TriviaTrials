@@ -1,6 +1,6 @@
 
 # Trivia Trials
-#### Video Demo:  <URL HERE>
+#### Video Demo:  <URL "https://www.youtube.com/watch?v=KUnDT_yv-N0">
 #### Description:
 Trivia Trials is a project born out of my family's shared love for trivia games. It's a completely automated trivia game that uses OpenAI's API, Beautiful Soups web-scrapper, Flask's framework, and a variety of different programming languages. The ultimate goal of this application was to create a game for us to train for bar trivia with. 
 
