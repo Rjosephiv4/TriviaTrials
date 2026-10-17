@@ -13,10 +13,7 @@ import json
 from bs4 import BeautifulSoup
 import requests
 import datetime
-from webScrapper import scrapper 
 from dotenv import load_dotenv
-from openai import OpenAI
-from triviaGenerator import triviaCreator
 
 
 
@@ -26,12 +23,14 @@ from helpers import login_required
 app = Flask(__name__, static_url_path='/static')
 
 # Configure session to use filesystem (instead of signed cookies)
+app.config["SECRET_KEY"] = os.environ.get("TRIVIA_SECRET_KEY") or os.urandom(32)
+app.config["SESSION_FILE_DIR"] = os.environ.get("TRIVIA_SESSION_DIR", "flask_session")
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///triviaTrials.db")
+db = SQL("sqlite:///" + os.environ.get("TRIVIA_DATABASE", "triviaTrials.db"))
 
 @app.after_request
 def after_request(response):
@@ -430,7 +429,7 @@ def register():
             flash("Error: Passwords Do Not Match")
             return render_template("register.html")
         
-        hashedPass = generate_password_hash(password, method="pbkdf2", salt_length=16)
+        hashedPass = generate_password_hash(password, method="pbkdf2:sha256", salt_length=16)
         db.execute("INSERT INTO users (email, hash) VALUES(?, ?)", email, hashedPass)
 
         rows = db.execute("SELECT * FROM users WHERE email = ?", email)
@@ -492,9 +491,6 @@ def logout():
         flash("Successfully Logged Out")
         return redirect("/")
     
-# Ensure the app runs with debug mode enabled
-if __name__ == '__main__':
-    app.run(debug=True)
 
 def dateCreator():
     weekday_names = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -561,6 +557,8 @@ def getTodaysQuestions2():
     return questions
 
 def task():
+    from webScrapper import scrapper
+    from triviaGenerator import triviaCreator
     ids = db.execute("SELECT id FROM leaderboard")
     
     for x in range(0, len(ids)):
@@ -580,7 +578,11 @@ def run_scheduler():
         schedule.run_pending()
         time.sleep(1)
 
-schedule.every().day.at("00:00").do(task)
+# Explicit opt-in: imports, tests, and local demos never start paid/network jobs.
+if os.environ.get("TRIVIA_ENABLE_SCHEDULER") == "1":
+    schedule.every().day.at("00:00").do(task)
+    scheduler_thread = threading.Thread(target=run_scheduler, daemon=True)
+    scheduler_thread.start()
 
-scheduler_thread = threading.Thread(target=run_scheduler)
-scheduler_thread.start()
+if __name__ == "__main__":
+    app.run(host="127.0.0.1", port=5000)

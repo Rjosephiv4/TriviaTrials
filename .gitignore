@@ -1,4 +1,11 @@
-/flask_session
-/pycache
-/node_modules
-/apiInformation.env
+__pycache__/
+*.py[cod]
+.venv/
+.env
+*.env
+flask_session/
+*.db
+*.db-*
+node_modules/
+output.txt
+.pytest_cache/
